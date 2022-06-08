@@ -1,6 +1,5 @@
 package com.example.temantani.data.local
 
-import android.hardware.biometrics.BiometricManager
 import com.example.temantani.R
 import com.example.temantani.data.model.MenuCategory
 import com.example.temantani.utils.Strings

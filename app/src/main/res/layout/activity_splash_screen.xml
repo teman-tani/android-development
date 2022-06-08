@@ -7,11 +7,11 @@
     android:background="@color/hijau_muda"
     tools:context=".view.SplashScreen">
 
-
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="226dp"
         android:layout_height="59dp"
+        android:contentDescription="@string/logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -27,7 +27,7 @@
         android:fontFamily="@font/poppins_extra_bold"
         android:textAlignment="center"
         android:textColor="@color/brown"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,6 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="104dp"
+        android:contentDescription="@string/img_splash"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

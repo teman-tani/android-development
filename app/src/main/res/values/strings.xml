@@ -12,6 +12,9 @@
     <string name="capture">Capture</string>
     <string name="gallery">Gallery</string>
 
+    <string name="logo">logo</string>
+    <string name="img_splash">Image Splash</string>
+
     <string name="greetings">Selamat Datang di Teman Tani</string>
     <string name="caption_greetings">Rawat Tanaman Anda Lebih Mudah</string>
 
