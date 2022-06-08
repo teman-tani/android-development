@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "318462392563",
+    "firebase_url": "https://temantani01-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "temantani01",
+    "storage_bucket": "temantani01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:318462392563:android:3df0ea4fb5e23598fc9f86",
+        "android_client_info": {
+          "package_name": "com.example.temantani"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "318462392563-o7pc22tn368n7mrg080m268cuq2fh5pc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfKhREmGfecz_BIViqEhK7O0sTI3z3CNQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "318462392563-o7pc22tn368n7mrg080m268cuq2fh5pc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
