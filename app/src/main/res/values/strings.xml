@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">TemanTani</string>
+    <string name="welcome">Selamat Pagi, </string>
+    <string name="selamat_datang">Selamat Datang.</string>
+    <string name="menu">Kalkulator Pupuk</string>
+    <string name="detection"> Deteksi</string>
+    <string name="treatment"> Perawatan</string>
+    <string name="shop"> Toko</string>
+    <string name="calculator"> Kalkulator Pupuk</string>
+    <string name="ask"> Tanya Ahli</string>
+    <string name="community">Komunitas</string>
+    <string name="capture">Capture</string>
+    <string name="gallery">Gallery</string>
+
+    <string name="greetings">Selamat Datang di Teman Tani</string>
+    <string name="caption_greetings">Rawat Tanaman Anda Lebih Mudah</string>
+
+
+
+</resources>
