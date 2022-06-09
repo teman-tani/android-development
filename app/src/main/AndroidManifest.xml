@@ -4,6 +4,7 @@
     package="com.example.temantani">
 
     <uses-feature android:name="android.hardware.camera" />
+
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
@@ -17,6 +18,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TemanTani"
         tools:targetApi="31">
+        <activity
+            android:name=".CalculatorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TreatmentActivity"
+            android:exported="false" />
         <activity
             android:name=".view.detection.ResultActivity"
             android:exported="false" />

@@ -22,6 +22,7 @@
     <string name="gejala">Gejala</string>
     <string name="deskripsi_gejala">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet at aut beatae commodi consectetur delectus, distinctio dolore ea explicabo impedit labore magnam molestias nihil possimus, quo sint vel veniam.</string>
     <string name="recomendation">Rekomendasi</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
