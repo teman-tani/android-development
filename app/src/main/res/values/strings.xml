@@ -18,5 +18,10 @@
     <string name="greetings">Selamat Datang di Teman Tani</string>
     <string name="caption_greetings">Rawat Tanaman Anda Lebih Mudah</string>
 
+    <string name="result_detection">Hasil Deteksi</string>
+    <string name="gejala">Gejala</string>
+    <string name="deskripsi_gejala">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet at aut beatae commodi consectetur delectus, distinctio dolore ea explicabo impedit labore magnam molestias nihil possimus, quo sint vel veniam.</string>
+    <string name="recomendation">Rekomendasi</string>
+
 
 </resources>

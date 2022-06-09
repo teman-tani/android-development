@@ -61,7 +61,12 @@ class CameraActivity : AppCompatActivity() {
                         "isBackCamera",
                         cameraSelector == CameraSelector.DEFAULT_BACK_CAMERA
                     )
-                    //setResult(AddStoryActivity.CAMERA_X_RESULT, intent)
+                    print("Test Camera")
+//                    Intent(this@CameraActivity, ResultActivity::class.java).also { intent ->
+//                        startActivity(intent)
+//                    }
+//                    Intent(this, CameraActivity::class.java)
+                    setResult(ResultActivity.CAMERA_X_RESULT, intent)
                     finish()
 
                     Toast.makeText(

@@ -17,6 +17,7 @@ import com.example.temantani.data.model.MenuCategory
 import com.example.temantani.databinding.ActivityMainBinding
 import com.example.temantani.databinding.CardMenuBinding
 import com.example.temantani.view.detection.CameraActivity
+import com.example.temantani.view.detection.ResultActivity
 import java.io.File
 
 class MainActivity : AppCompatActivity() {
@@ -94,22 +95,31 @@ class MainActivity : AppCompatActivity() {
             miOption0.miContainer.setOnClickListener{
                 startCameraX()
             }
+            miOption1.miContainer.setOnClickListener{
+                startResult()
+            }
         }
     }
+
+    private fun startResult(){
+        val moveIntent = Intent(this, ResultActivity::class.java)
+        startActivity(moveIntent)
+    }
+
 
     private fun startCameraX() {
         val intent = Intent(this, CameraActivity::class.java)
-        launcherIntentCameraX.launch(intent)
+       startActivity(intent)
     }
 
-    private val launcherIntentCameraX = registerForActivityResult(
-        ActivityResultContracts.StartActivityForResult()
-    ) {
-        if (it.resultCode == CAMERA_X_RESULT) {
-            val file = it.data?.getSerializableExtra("picture") as File
-            val isBackCamera = it.data?.getBooleanExtra("isBackCamera", true) as Boolean
-        }
-    }
+//    private val launcherIntentCameraX = registerForActivityResult(
+//        ActivityResultContracts.StartActivityForResult()
+//    ) {
+//        if (it.resultCode == CAMERA_X_RESULT) {
+//            val file = it.data?.getSerializableExtra("picture") as File
+//            val isBackCamera = it.data?.getBooleanExtra("isBackCamera", true) as Boolean
+//        }
+//    }
 
     companion object {
         const val CAMERA_X_RESULT = 200
