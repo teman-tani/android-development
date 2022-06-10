@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view_diseases"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:layout_marginLeft="8dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginBottom="4dp"
+    card_view:cardCornerRadius="4dp"
+    android:clipToPadding="false"
+    android:clipChildren="false"
+    card_view:cardElevation="20dp"
+    card_view:cardPreventCornerOverlap="false"
+    >
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp" >
+
+
+        <ImageView
+            android:id="@+id/previewImageDiseases"
+            android:layout_width="107dp"
+            android:layout_height="110dp"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintHorizontal_bias="0.0"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/img_row_diseases" />
+
+        <TextView
+            android:id="@+id/tv_title_diseases"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/black"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintHorizontal_bias="0.033"
+            card_view:layout_constraintStart_toEndOf="@+id/previewImageDiseases"
+            card_view:layout_constraintTop_toTopOf="parent"
+            card_view:layout_constraintVertical_bias="0.078"
+            tools:text="@string/title_diseases" />
+
+        <TextView
+            android:id="@+id/tv_latin_diseases"
+            android:layout_width="44dp"
+            android:layout_height="14dp"
+            android:fontFamily="@font/poppins_light"
+            android:textColor="@color/black"
+            android:textSize="8sp"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintHorizontal_bias="0.029"
+            card_view:layout_constraintStart_toEndOf="@+id/previewImageDiseases"
+            card_view:layout_constraintTop_toTopOf="parent"
+            card_view:layout_constraintVertical_bias="0.348"
+            tools:text="@string/latin_diseases" />
+
+        <ImageView
+            android:id="@+id/previewImageCause"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="8dp"
+            card_view:layout_constraintStart_toEndOf="@+id/previewImageDiseases"
+            card_view:layout_constraintTop_toBottomOf="@+id/tv_latin_diseases"
+            card_view:srcCompat="@drawable/icons_mushroom" />
+
+        <TextView
+            android:id="@+id/tv_cause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins_light"
+            android:textColor="@color/black"
+            android:textSize="10dp"
+            card_view:layout_constraintStart_toEndOf="@+id/previewImageCause"
+            card_view:layout_constraintTop_toBottomOf="@+id/tv_latin_diseases"
+            tools:text="@string/cause" />
+
+        <ImageView
+            android:id="@+id/previewImagePlant"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            card_view:layout_constraintStart_toEndOf="@+id/tv_cause"
+            card_view:layout_constraintTop_toBottomOf="@+id/tv_latin_diseases"
+            android:src="@drawable/icons_rice" />
+
+        <TextView
+            android:id="@+id/tv_plants"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/plants_diseases"
+            android:textColor="@color/black"
+            android:textSize="10dp"
+            card_view:layout_constraintStart_toEndOf="@+id/previewImagePlant"
+            card_view:layout_constraintTop_toBottomOf="@+id/tv_latin_diseases" />
+
+        <TextView
+            android:id="@+id/tv_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/detail"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintHorizontal_bias="0.969"
+            card_view:layout_constraintStart_toEndOf="@+id/previewImageDiseases"
+            card_view:layout_constraintTop_toBottomOf="@+id/tv_cause"
+            card_view:layout_constraintVertical_bias="0.384" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</androidx.cardview.widget.CardView>

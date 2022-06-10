@@ -1,7 +1,5 @@
 package com.example.temantani.data.api
 
-import androidx.viewbinding.BuildConfig
-
 class ApiConfig {
 //    companion object{
 //

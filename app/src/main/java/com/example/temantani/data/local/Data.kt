@@ -32,7 +32,7 @@ object Data {
                 title = Strings.get(R.string.community)
             ),
 
-        )
+            )
     }
 
     const val MENU_DETECTION = "menu_detection"

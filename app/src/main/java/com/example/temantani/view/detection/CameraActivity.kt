@@ -66,7 +66,7 @@ class CameraActivity : AppCompatActivity() {
 //                        startActivity(intent)
 //                    }
 //                    Intent(this, CameraActivity::class.java)
-                    setResult(ResultActivity.CAMERA_X_RESULT, intent)
+                    //setResult(ResultActivity.CAMERA_X_RESULT, intent)
                     finish()
 
                     Toast.makeText(

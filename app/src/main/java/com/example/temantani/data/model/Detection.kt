@@ -1,7 +1,6 @@
 package com.example.temantani.data.model
 
-
-data class DetectionModel(
+data class Detection (
     val hasil: String?,
     val penyakit: String?,
     val gejala : String?

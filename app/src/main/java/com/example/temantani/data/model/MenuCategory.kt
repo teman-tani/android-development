@@ -1,3 +1,6 @@
+
+
+
 package com.example.temantani.data.model
 
 data class MenuCategory(

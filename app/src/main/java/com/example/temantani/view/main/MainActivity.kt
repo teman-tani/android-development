@@ -18,6 +18,7 @@ import com.example.temantani.databinding.ActivityMainBinding
 import com.example.temantani.databinding.CardMenuBinding
 import com.example.temantani.view.detection.CameraActivity
 import com.example.temantani.view.detection.ResultActivity
+import com.example.temantani.view.treatment.TreatmentActivity
 import java.io.File
 
 class MainActivity : AppCompatActivity() {
@@ -93,24 +94,25 @@ class MainActivity : AppCompatActivity() {
     private fun setupAction(){
         binding.apply {
             miOption0.miContainer.setOnClickListener{
-                startCameraX()
+                val intent = Intent(this@MainActivity, CameraActivity::class.java)
+                startActivity(intent)
             }
             miOption1.miContainer.setOnClickListener{
-                startResult()
+                val moveIntent = Intent(this@MainActivity, TreatmentActivity::class.java)
+                startActivity(moveIntent)
             }
         }
     }
 
-    private fun startResult(){
-        val moveIntent = Intent(this, ResultActivity::class.java)
-        startActivity(moveIntent)
-    }
-
-
-    private fun startCameraX() {
-        val intent = Intent(this, CameraActivity::class.java)
-       startActivity(intent)
-    }
+//    private fun startResult(){
+//        val moveIntent = Intent(this, ResultActivity::class.java)
+//        startActivity(moveIntent)
+//    }
+//
+//
+//    private fun startCameraX() {
+//
+//    }
 
 //    private val launcherIntentCameraX = registerForActivityResult(
 //        ActivityResultContracts.StartActivityForResult()

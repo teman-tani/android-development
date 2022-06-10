@@ -5,56 +5,68 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.temantani.R
+import com.example.temantani.adapter.FirebaseDiseasesAdapter
+import com.example.temantani.adapter.FirebasePlantsAdapter
+import com.example.temantani.data.model.Diseases
+import com.example.temantani.data.model.Plants
+import com.example.temantani.databinding.FragmentDiseasesBinding
+import com.example.temantani.databinding.FragmentPlantBinding
+import com.firebase.ui.database.FirebaseRecyclerOptions
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [PlantFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class PlantFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private var _binding: FragmentPlantBinding? = null
+    private val binding get() = _binding!!
+    private lateinit var db: FirebaseDatabase
+    private lateinit var adapter: FirebasePlantsAdapter
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        db = Firebase.database
+
+        val plantRef = db.reference.child(PLANT_CHILD)
+
+        val manager = LinearLayoutManager(view.context)
+        binding.rvPlants.layoutManager = manager
+
+        val itemDecoration = DividerItemDecoration(view.context, manager.orientation)
+        binding.rvPlants.addItemDecoration(itemDecoration)
+
+        val options = FirebaseRecyclerOptions.Builder<Plants>()
+            .setQuery(plantRef, Plants::class.java)
+            .build()
+        adapter = FirebasePlantsAdapter(options)
+        binding.rvPlants.adapter = adapter
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_plant, container, false)
+    ): View {
+        _binding = FragmentPlantBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    public override fun onResume() {
+        super.onResume()
+        adapter.startListening()
+    }
+    public override fun onPause() {
+        adapter.stopListening()
+        super.onPause()
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment PlantFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            PlantFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        private val TAG = PlantFragment::class.java.simpleName
+        const val ARG_TYPE = "type_follow"
+        const val PLANT_CHILD = "tanaman"
     }
 }
