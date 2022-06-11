@@ -4,6 +4,7 @@ import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.provider.MediaStore
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
@@ -12,6 +13,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.custom.sliderimage.logic.SliderImage
 import com.example.temantani.data.local.Data
 import com.example.temantani.data.model.MenuCategory
 import com.example.temantani.databinding.ActivityMainBinding
@@ -111,7 +113,8 @@ class MainActivity : AppCompatActivity() {
 //
 //
 //    private fun startCameraX() {
-//
+//        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+//        launcherIntentCamera.launch(intent)
 //    }
 
 //    private val launcherIntentCameraX = registerForActivityResult(

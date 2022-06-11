@@ -47,7 +47,7 @@
         app:layout_constraintVertical_bias="0.073" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tv_diseases"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_regular"
@@ -71,7 +71,7 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView5"
         app:layout_constraintHorizontal_bias="0.095"
         app:layout_constraintStart_toStartOf="@+id/imageView5"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/tv_diseases"
         app:layout_constraintVertical_bias="0.059" />
 
     <TextView

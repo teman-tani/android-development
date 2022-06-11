@@ -1,5 +1,6 @@
 package com.example.temantani.view.detection
 
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -22,9 +23,20 @@ class ResultActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
 
+        val file = intent.getSerializableExtra("picture") as File
+        val isBackCamera = intent.getBooleanExtra("isBackCamera", true) as Boolean
+        val result = rotateBitmap(
+            BitmapFactory.decodeFile(file.path),
+            isBackCamera
+        )
+
+//        val penyakit = intent.getStringExtra("penyakit")
+
+        getFile = bitmapToFile(result, "Android/media/com.example.temantani/TemanTani/" + file.name) as File
+
+        binding.previewImage.setImageBitmap(result)
+//        binding.tvDiseases.text = penyakit
     }
-
-
 
     companion object{
         const val CAMERA_X_RESULT = 200
