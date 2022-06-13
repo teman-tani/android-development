@@ -161,10 +161,6 @@ class CameraActivity : AppCompatActivity() {
                     val intent = Intent(this@CameraActivity, ResultActivity::class.java)
                     intent.putExtra("picture", file)
                     intent.putExtra("penyakit", responseBody.penyakit)
-                    val listRecommendation =  ArrayList<Recommendation>()
-                    for (review in listRecommendation) {
-                      intent.putExtra("extra_recommendation", review)
-                    }
                     startActivity(intent)
 
                 } else {

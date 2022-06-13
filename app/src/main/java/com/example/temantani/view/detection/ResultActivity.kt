@@ -5,10 +5,12 @@ import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.temantani.adapter.RecommendationAdapter
 import com.example.temantani.data.model.Recommendation
+import com.example.temantani.data.repository.DataRepository
 import com.example.temantani.databinding.ActivityResultBinding
 import com.example.temantani.utils.bitmapToFile
 import com.example.temantani.utils.rotateBitmap
@@ -20,6 +22,10 @@ class ResultActivity : AppCompatActivity() {
 
     private var listReview: ArrayList<Recommendation> = ArrayList()
     private lateinit var adapter: RecommendationAdapter
+
+    private lateinit var listRecommendation: List<Recommendation>
+
+    private val repository = DataRepository()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +40,6 @@ class ResultActivity : AppCompatActivity() {
         val itemDecoration = DividerItemDecoration(this, manager.orientation)
         binding.rvRecommendation.addItemDecoration(itemDecoration)
 
-        adapter = RecommendationAdapter(listReview, this)
         supportActionBar?.hide()
 
 
@@ -61,7 +66,27 @@ class ResultActivity : AppCompatActivity() {
 
         binding.tvCauseResult.text = gejala
 
+        listRecommendation = repository.getRecommendation()
+        setupRecyclerView()
     }
+
+    private fun setupRecyclerView() {
+        val mAdapter = RecommendationAdapter(listRecommendation)
+
+//        mAdapter.setOnItemClickCallback(object : ModuleCategoryAdapter.OnItemClickCallback{
+//            override fun onItemClicked(moduleCategory: ModuleCategory) {
+//                val destination = ModuleCategoryFragmentDirections
+//                    .actionModuleCategoryFragmentToModuleItemFragment()
+//                destination.categoryKey = moduleCategory.key
+//                findNavController().navigate(destination)
+//            }
+//        })
+
+        binding.rvRecommendation.apply {
+            adapter = mAdapter
+        }
+    }
+
 
     companion object{
         const val EXTRA_RECOMMENDATION = "extra_recommendation"
