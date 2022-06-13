@@ -1,7 +1,12 @@
 package com.example.temantani.data.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Recommendation(
-    val name: String?,
-    val link_shop: String?,
-    val image: String?,
-)
+    val tempat: String?,
+    val nama: String?,
+    val image_src: String?,
+    val product_link : String?
+) : Parcelable

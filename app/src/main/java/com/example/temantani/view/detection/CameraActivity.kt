@@ -3,6 +3,7 @@ package com.example.temantani.view.detection
 import android.app.Dialog
 import android.content.Intent
 import android.graphics.BitmapFactory
+import android.nfc.Tag
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
@@ -24,11 +25,16 @@ import com.example.temantani.R
 import com.example.temantani.data.api.ApiConfig
 import com.example.temantani.data.api.DetectionResponse
 import com.example.temantani.data.api.TestResponse
+import com.example.temantani.data.model.Recommendation
 import com.example.temantani.databinding.ActivityCameraBinding
 import com.example.temantani.utils.bitmapToFile
 import com.example.temantani.utils.createFile
 import com.example.temantani.utils.reduceFileImage
 import com.example.temantani.utils.rotateBitmap
+import com.loopj.android.http.AsyncHttpClient
+import com.loopj.android.http.AsyncHttpResponseHandler
+import com.loopj.android.http.RequestParams
+import cz.msebera.android.httpclient.Header
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
@@ -113,8 +119,6 @@ class CameraActivity : AppCompatActivity() {
     }
 
     private fun uploadImage() {
-
-
         if (getFile == null) {
             Toast.makeText(
                 this,
@@ -134,14 +138,17 @@ class CameraActivity : AppCompatActivity() {
             requestImageFile
         )
 
-        addStory(imageMultipart)
+        val description = getString(R.string.api_key).toRequestBody("text/plain".toMediaType())
+        addStory(file,imageMultipart,description)
     }
 
     private fun addStory(
+        file : File,
         photo: MultipartBody.Part,
+        api_key: RequestBody,
     ) {
         val client =
-            ApiConfig.getApiService().detection(photo)
+            ApiConfig.getApiService().detection(photo,api_key)
         client.enqueue(object : Callback<DetectionResponse> {
             override fun onResponse(
                 call: Call<DetectionResponse>,
@@ -150,11 +157,16 @@ class CameraActivity : AppCompatActivity() {
                 val responseBody = response.body()
                 if (response.isSuccessful && responseBody != null) {
                     _isAddStorySuccess = _isAddStorySuccess.plus(1)
-                    Toast.makeText(
-                        this@CameraActivity,
-                        "Gagal mengambil gambar.",
-                        Toast.LENGTH_SHORT
-                    ).show()
+
+                    val intent = Intent(this@CameraActivity, ResultActivity::class.java)
+                    intent.putExtra("picture", file)
+                    intent.putExtra("penyakit", responseBody.penyakit)
+                    val listRecommendation =  ArrayList<Recommendation>()
+                    for (review in listRecommendation) {
+                      intent.putExtra("extra_recommendation", review)
+                    }
+                    startActivity(intent)
+
                 } else {
                     Log.e(TAG, "BELUM SUCCESS : ${response.message()}")
                     _isAddStorySuccess = 0

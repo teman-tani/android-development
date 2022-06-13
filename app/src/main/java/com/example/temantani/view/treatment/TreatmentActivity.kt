@@ -1,5 +1,6 @@
 package com.example.temantani.view.treatment
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.annotation.StringRes
@@ -10,6 +11,7 @@ import com.example.temantani.adapter.FirebaseDiseasesAdapter
 import com.example.temantani.adapter.SectionsPagerAdapter
 import com.example.temantani.databinding.ActivityMainBinding
 import com.example.temantani.databinding.ActivityTreatmentBinding
+import com.example.temantani.view.main.MainActivity
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -45,5 +47,10 @@ class TreatmentActivity : AppCompatActivity() {
 
 
         supportActionBar?.hide()
+
+        binding.back.setOnClickListener{
+            val moveIntent = Intent(this, MainActivity::class.java)
+            startActivity(moveIntent)
+        }
     }
 }

@@ -7,12 +7,13 @@
         <entry key="app/src/main/res/drawable-v24/rounded_bottom_appbar.xml" value="0.2495" />
         <entry key="app/src/main/res/drawable-v24/rounded_result.xml" value="0.2245" />
         <entry key="app/src/main/res/drawable-v24/rounded_view.xml" value="0.2495" />
+        <entry key="app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.2335" />
         <entry key="app/src/main/res/drawable/ic_baseline_control_camera_24.xml" value="0.2495" />
         <entry key="app/src/main/res/font/poppins_family.xml" value="0.27291666666666664" />
         <entry key="app/src/main/res/layout/activity_calculator.xml" value="0.19947916666666668" />
         <entry key="app/src/main/res/layout/activity_camera.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.31271209716796877" />
-        <entry key="app/src/main/res/layout/activity_result.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_result.xml" value="0.29599345870809485" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.18795289855072464" />
         <entry key="app/src/main/res/layout/activity_treatment.xml" value="0.1" />
         <entry key="app/src/main/res/layout/card_menu.xml" value="0.26019410948822463" />
@@ -21,9 +22,12 @@
         <entry key="app/src/main/res/layout/fragment_plant.xml" value="0.18541666666666667" />
         <entry key="app/src/main/res/layout/item_row_article.xml" value="0.22447916666666667" />
         <entry key="app/src/main/res/layout/item_row_diseases.xml" value="0.4094727127640335" />
+        <entry key="app/src/main/res/layout/item_row_image.xml" value="0.23233032226562506" />
         <entry key="app/src/main/res/layout/item_row_plants.xml" value="0.43727598566308246" />
+        <entry key="app/src/main/res/layout/item_row_recommendation.xml" value="0.1645594278971355" />
         <entry key="app/src/main/res/layout/menu_view.xml" value="0.30515899658203127" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.24375" />
+        <entry key="app/src/main/res/xml/network_security_config.xml" value="0.22708333333333333" />
       </map>
     </option>
   </component>

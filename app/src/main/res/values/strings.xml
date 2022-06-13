@@ -36,6 +36,10 @@
     <string name="total_diseases">3 Penyakit</string>
     <string name="yakin">Apakah anda ingin mengupload ?</string>
 
+    <string name="go_to_link">Go To Link</string>
+    <string name="recomendation_title">Rekomen</string>
+    <string name="api_key">154c991c-1c07-492b-907c-6d3945759fd1</string>
+
 
 
 </resources>

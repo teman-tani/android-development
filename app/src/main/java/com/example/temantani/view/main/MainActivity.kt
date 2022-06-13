@@ -3,6 +3,7 @@ package com.example.temantani.view.main
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.media.Image
 import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.Toast
@@ -13,8 +14,10 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.custom.sliderimage.logic.SliderImage
+import com.example.temantani.R
+import com.example.temantani.adapter.ImageCarouselAdapter
 import com.example.temantani.data.local.Data
+import com.example.temantani.data.model.ImageCarousel
 import com.example.temantani.data.model.MenuCategory
 import com.example.temantani.databinding.ActivityMainBinding
 import com.example.temantani.databinding.CardMenuBinding
@@ -105,26 +108,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
-//    private fun startResult(){
-//        val moveIntent = Intent(this, ResultActivity::class.java)
-//        startActivity(moveIntent)
-//    }
-//
-//
-//    private fun startCameraX() {
-//        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-//        launcherIntentCamera.launch(intent)
-//    }
-
-//    private val launcherIntentCameraX = registerForActivityResult(
-//        ActivityResultContracts.StartActivityForResult()
-//    ) {
-//        if (it.resultCode == CAMERA_X_RESULT) {
-//            val file = it.data?.getSerializableExtra("picture") as File
-//            val isBackCamera = it.data?.getBooleanExtra("isBackCamera", true) as Boolean
-//        }
-//    }
 
     companion object {
         const val CAMERA_X_RESULT = 200
