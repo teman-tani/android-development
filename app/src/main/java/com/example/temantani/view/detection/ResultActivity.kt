@@ -1,11 +1,8 @@
 package com.example.temantani.view.detection
 
-import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.result.contract.ActivityResultContracts
-import androidx.navigation.fragment.findNavController
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.temantani.adapter.RecommendationAdapter
@@ -33,12 +30,20 @@ class ResultActivity : AppCompatActivity() {
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val manager = LinearLayoutManager(this)
-        binding.rvRecommendation.layoutManager = manager
+//        val manager = LinearLayoutManager(this)
+//        binding.rvRecommendation.layoutManager = manager
+
+        binding.rvRecommendation.setLayoutManager(
+            LinearLayoutManager(
+                this,
+                LinearLayoutManager.HORIZONTAL,
+                true
+            )
+        )
 
 
-        val itemDecoration = DividerItemDecoration(this, manager.orientation)
-        binding.rvRecommendation.addItemDecoration(itemDecoration)
+//        val itemDecoration = DividerItemDecoration(this, manager.orientation)
+//        binding.rvRecommendation.addItemDecoration(itemDecoration)
 
         supportActionBar?.hide()
 
